@@ -131,7 +131,7 @@ async def proxy_to_backend(request: Request, anypath: str, current_user: Dict[st
     Proxies all requests to the backend server after JWT authentication.
     """
     backend_port = int(os.environ.get("BACKEND_PORT"))
-    backend_url = f"http://localhost:{backend_port}/{anypath}"  # Construct backend URL
+    backend_url = f"http://backend:6000/{anypath}"  # Construct backend URL
 
     logger(f"Proxying request to: {backend_url}")
 
